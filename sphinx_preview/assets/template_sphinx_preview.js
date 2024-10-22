@@ -156,8 +156,10 @@ function scrollToContent(iframe) {
   // specify a taget link
   if (target.indexOf("#") != -1) {
       setTimeout(function () {
-          var pos_top_content_iframe = $("#sp_preframe").contents().find('a[href="#' + target.split("#")[1] + '"]').last().offset().top;
-          document.getElementById("sp_preframe").contentDocument.documentElement.scrollTop = pos_top_content_iframe - 25;
-      }, 500);
+        let config = {{ config }};
+        let target_id = target.split("#")[1];
+        let pos_top_content_iframe = $("#sp_preframe").contents().find('#' + target_id).offset().top;
+        document.getElementById("sp_preframe").contentDocument.documentElement.scrollTop = pos_top_content_iframe - config.scroll_offset;
+    }, 500);
   }
 }

@@ -41,7 +41,8 @@ def _save_js_file(app, target):
         "width": config.get('width', 500),
         "height": config.get('height', 300),
         "offset": config.get('offset', {'left': 20, 'top': 20}),
-        "timeout": config.get('timeout', 250)
+        "timeout": config.get('timeout', 250),
+        "scroll_offset": config.get("scroll_offset", 75)
 
     }
     script_dir = os.path.join(os.path.dirname(__file__), 'assets')
